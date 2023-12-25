@@ -30,14 +30,14 @@ msg() {
 }
 
 exitUpdate() {
+  clear
   echo
   echo "-------------------------------------------------------"
   echo ">>>>   Operating System Update Has Been Completed  <<<<"
   echo "-------------------------------------------------------"
   echo
-  clear
   source ~/.bashrc
-  exec bash
+  exec zsh
 }
 
 #UpdateOS
@@ -106,8 +106,51 @@ installDocker() {
   exit_status
 }
 
+#Install VsCode
+installVSCode() {
+  if [ -n "$WSL_DISTRO_NAME" ]; then
+    msg "Running in WSL"
+    msg "VSCode will not be installed"
+  else
+    msg "Running on Ubuntu (non-WSL)"
+    msg "Start Install VSCode"
+    #
+    sudo apt update
+    sudo apt install software-properties-common apt-transport-https wget -y
+    exit_status
+
+    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+    exit_status
+
+    echo | sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    exit_status
+
+    sudo apt install code -y
+    exit_status
+
+  fi
+}
+
+####################################
+
+#Install Zsh
+installZSH() {
+  msg "Start Install Zsh"
+  #
+  sudo apt update
+  sudo apt install zsh -y
+  exit_status
+
+  chsh -s $(which zsh)
+
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  exit_status
+
+}
+
 ##################################
 updateOS
 installNode
 installDocker
+installVSCode
 exitUpdate
