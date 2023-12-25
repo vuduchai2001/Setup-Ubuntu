@@ -153,5 +153,5 @@ updateOS
 installNode
 installDocker
 installVSCode
-installZSH
+#installZSH
 exitUpdate
