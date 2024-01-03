@@ -37,7 +37,7 @@ exitUpdate() {
   echo "-------------------------------------------------------"
   echo
   source ~/.bashrc
-  exec zsh
+  exec bash
 }
 
 #UpdateOS
