@@ -9,16 +9,10 @@
   "editor.fontSize": 14,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "tabnine.experimentalAutoImports": true,
-  "workbench.colorTheme": "Evondev Dracula Darker Contrast",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.iconTheme": "material-icon-theme",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "liveServer.settings.donotShowInfoMsg": true,
-  "remote.SSH.remotePlatform": {
-    "192.168.2.41": "linux"
-  },
-
-  "editor.formatOnSave": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -42,5 +36,12 @@
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  }
+  },
+  "editor.formatOnSave": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "markdown-preview-enhanced.previewTheme": "monokai.css",
+  "editor.minimap.enabled": false
 }
